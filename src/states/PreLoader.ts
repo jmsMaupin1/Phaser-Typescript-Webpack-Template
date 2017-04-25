@@ -1,6 +1,5 @@
 import '../../assets/phaser-logo.jpg';
 import '../../assets/simon.png';
-import '../../assets/titlepage.jpg';
 export default class Preloader extends Phaser.State {
 	preloadBar: Phaser.Sprite;
 
