@@ -18,5 +18,9 @@
     "typescript": "^2.2.2",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.2"
+  },
+  "dependencies": {
+    "json-loader": "^0.5.4",
+    "phaser-webpack-loader": "^1.0.0"
   }
 }

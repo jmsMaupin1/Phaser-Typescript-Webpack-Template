@@ -3,7 +3,7 @@ export default class MainMenu extends Phaser.State {
 	logo: Phaser.Sprite;
 
 	create () {
-		this.logo = this.add.sprite(this.world.centerX, -300, 'phaserlogo');
+		this.logo = this.add.sprite(this.world.centerX, -300, 'phaser-logo');
 		this.logo.anchor.setTo(0.5,0.5);
 
 		this.add.tween(this.logo).to({

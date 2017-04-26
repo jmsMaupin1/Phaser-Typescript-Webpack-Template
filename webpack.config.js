@@ -9,7 +9,11 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.ts$/, 
+				test: /\.json$/,
+				use: 'json-loader'
+			},
+			{
+				test: /\.(ts)$/, 
 				loader: 'ts-loader', 
 				exclude: '/node_modules/'
 			},

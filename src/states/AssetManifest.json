@@ -1,0 +1,23 @@
+{
+	"images": [
+		"loader.png",
+		"phaser-logo.jpg",
+		"super_mario.png",
+		"basictiles.png"
+	],
+	"spriteSheets": [
+		{
+			"key": "simon",
+			"imageFile": "simon.png",
+			"frameHeight": 58,
+			"frameWidth": 96,
+			"frameMax": -1,
+			"frameMargin": 0,
+			"frameSpacing": 0
+		}
+	],
+	"tileMaps": [
+		"testmap.json",
+		"tilemap.json"
+	]
+}

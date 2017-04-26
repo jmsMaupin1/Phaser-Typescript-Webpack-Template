@@ -1,14 +1,56 @@
-import '../../assets/phaser-logo.jpg';
-import '../../assets/simon.png';
+// import '../../assets/phaser-logo.jpg';
+
+// import '../../assets/testmap.json';
+// import '../../assets/super_mario.png';
+
+// import '../../assets/tilemap.json';
+// import '../../assets/basictiles.png';
+
+// import '../../assets/simon.png';
+import * as Manifest from './AssetManifest.json';
 export default class Preloader extends Phaser.State {
 	preloadBar: Phaser.Sprite;
 
 	preload() {
 		this.preloadBar = this.add.sprite(200, 500, 'preloadBar');
 		this.load.setPreloadSprite(this.preloadBar);
-		this.load.image('phaserlogo', '../../assets/phaser-logo.jpg');
 
-		this.load.spritesheet('simon', 'assets/simon.png', 58, 96, 5);
+		for (var key in Manifest) {
+			if (key == 'images') {
+				for (var index in Manifest[key]){
+					let image = Manifest[key][index];
+					require('../../assets/' + image);
+					this.load.image(
+						image.replace(/\.[^/.]+$/, ""), 
+						'assets/' + image);
+				}
+			} else if (key == 'spriteSheets') {
+				for (var index in Manifest[key]) {
+					let spritesheet = Manifest[key][index];
+					require('../../assets/' + spritesheet.imageFile)
+					this.load.spritesheet(
+						spritesheet.key, 
+						'assets/' + spritesheet.imageFile,
+						spritesheet.frameHeight,
+						spritesheet.frameWidth,
+						spritesheet.frameMax?spritesheet.frameMax : -1,
+						spritesheet.frameMargin?spritesheet.frameMargin : 0,
+						spritesheet.frameSpacing?spritesheet.frameSpacing : 0)
+				}
+			} else if (key == 'tileMaps') {
+				for (var index in Manifest[key]) {
+					let tileMap = Manifest[key][index];
+					require('../../assets/' + tileMap)
+					this.load.tilemap(
+						tileMap.replace(/\.[^/.]+$/, ""),
+						'assets/' + tileMap,
+						null,
+						Phaser.Tilemap.TILED_JSON
+					)
+				}
+			}
+		}
+
 	}
 
 	create() {
