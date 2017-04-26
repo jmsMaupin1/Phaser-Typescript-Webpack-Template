@@ -1,12 +1,3 @@
-// import '../../assets/phaser-logo.jpg';
-
-// import '../../assets/testmap.json';
-// import '../../assets/super_mario.png';
-
-// import '../../assets/tilemap.json';
-// import '../../assets/basictiles.png';
-
-// import '../../assets/simon.png';
 import * as Manifest from './AssetManifest.json';
 export default class Preloader extends Phaser.State {
 	preloadBar: Phaser.Sprite;
