@@ -6,7 +6,7 @@ import InitialGameState from './states/InitialGameState.ts'
 class SimpleGame extends Phaser.Game{
 
     constructor() {
-        super(800, 600, Phaser.AUTO, 'App', null);
+        super(640, 640, Phaser.AUTO, 'App', null);
         this.state.add('Boot', Boot, false);
         this.state.add('Preloader', Preloader, false);
         this.state.add('MainMenu', MainMenu, false);

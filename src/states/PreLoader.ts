@@ -37,6 +37,11 @@ export default class Preloader extends Phaser.State {
 						'assets/' + tileMap,
 						null,
 						Phaser.Tilemap.TILED_JSON
+					);
+
+					console.log(
+						tileMap.replace(/\.[^/.]+$/, "") + "\n"
+						+ 'assets/' + tileMap + "\n"
 					)
 				}
 			}

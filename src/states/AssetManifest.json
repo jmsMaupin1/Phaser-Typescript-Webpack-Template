@@ -3,7 +3,8 @@
 		"loader.png",
 		"phaser-logo.jpg",
 		"super_mario.png",
-		"basictiles.png"
+		"basictiles.png",
+		"wood_tileset.png"
 	],
 	"spriteSheets": [
 		{
@@ -18,6 +19,8 @@
 	],
 	"tileMaps": [
 		"testmap.json",
-		"tilemap.json"
+		"tilemap.json",
+		"tdfmap.json",
+		"basictdf.json"
 	]
 }
